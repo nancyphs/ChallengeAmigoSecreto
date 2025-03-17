@@ -18,16 +18,33 @@ function agregarAmigo(){
 
 }
 
+// Actualiza la lista de amigos
 function actualizarLista(){
     const lista =document.getElementById("listaAmigos");
     lista.innerHTML = ""; //Limpia  la lista antes de actualizar
     amigos.forEach(nombre => {
         const li = document.createElement("li"); //Crea una nueva lista
         li.textContent = nombre; // Asigna el texto del nombre
-        lista.appendChild(li) // Agrega a lista
+        lista.appendChild(li); // Agrega a lista
     });
 
 }
+function asignarTexto(elemento, texto){
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+    return
+}
 
 
+function sortearAmigo(){
+ if(amigos.length < 2){ //Comprueba que se hayan ingresado al menos dos nombres
+    asignarTexto('h2','Debes agregar al menos dos nombres antes de sortear.');
+    return
+ }
+ const numeroGanador = Math.floor(Math.random() * amigos.length); 
+ //Math.floor convierte el numero a un indice valido
+ // Math.random() genera un numero aleatorio entre el 0 y la cantidad de nombres
+ const ganador = amigos[numeroGanador];
+ asignarTexto('h2',`El amigo sorteado es: ${ganador}`);
+}
 
