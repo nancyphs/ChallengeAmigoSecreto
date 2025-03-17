@@ -13,7 +13,9 @@ function agregarAmigo(){
         console.log("array:", amigos);
         añadir.value = ""; //Se limpia el campo de entrada
         añadir.focus(); //Vuelve al input
-    }
+    } else {
+            alert("Por favor, ingresa un nombre.");
+        }
 
 
 }
