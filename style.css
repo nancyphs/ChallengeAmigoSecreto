@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 
 :root {
@@ -26,13 +25,17 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Pirata One', cursive;
-
 }
 
 h1, h2, button, input {
     font-family: 'Pirata One', cursive;
 }
 
+.ganador {
+    color: #131397; 
+    font-weight: bold;
+    font-size: 1.2em;
+}
 
 /* Contenedor principal */
 .main-content {
@@ -40,8 +43,8 @@ h1, h2, button, input {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh; /* Asegura que el contenido ocupa toda la pantalla */
-    justify-content: center; /* Centra verticalmente */
+    height: 100vh; 
+    justify-content: center; 
     text-align: center;
 }
 
@@ -106,16 +109,20 @@ h1, h2, button, input {
     background-color: #a1a1a1;
 }
 
-/* Botón Sortear */
+/* Contenedor de botones */
 .button-container {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    gap: 20px;
+    align-items: center;
 }
 
-.button-draw {
+/* Botón Sortear */
+.button-draw, .button-nuevo {
     display: flex;
-    align-items: center;
+    align-items: center;  
+    justify-content: center; 
     padding: 12px 24px;
     background-color: var(--color-button);
     color: var(--color-white);
@@ -124,14 +131,26 @@ h1, h2, button, input {
     cursor: pointer;
     border: none;
     transition: 0.3s;
+    min-width: 180px;
+    width: auto;
+    text-align: center;
+    height: 60px; 
 }
 
-.button-draw img {
+.button-nuevo {
+    display: none;
+}
+
+.button-draw img, .button-nuevo img {
     margin-right: 10px;
     width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.button-draw:hover {
+
+.button-draw:hover, .button-nuevo:hover {
     background-color: var(--color-button-hover);
 }
 
@@ -155,7 +174,7 @@ ul {
 }
 
 /* Responsividad para pantallas pequeñas */
-@media (max-width: 600px) {
+@media (max-width: 50px) {
     .input-section {
         padding: 20px;
         width: 90%;
@@ -165,8 +184,14 @@ ul {
         font-size: 36px;
     }
 
-    .button-draw {
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-draw, .button-nuevo {
         font-size: 16px;
         padding: 10px 20px;
+        min-width: auto;
     }
 }
