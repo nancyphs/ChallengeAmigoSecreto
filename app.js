@@ -18,4 +18,16 @@ function agregarAmigo(){
 
 }
 
+function actualizarLista(){
+    const lista =document.getElementById("listaAmigos");
+    lista.innerHTML = ""; //Limpia  la lista antes de actualizar
+    amigos.forEach(nombre => {
+        const li = document.createElement("li"); //Crea una nueva lista
+        li.textContent = nombre; // Asigna el texto del nombre
+        lista.appendChild(li) // Agrega a lista
+    });
+
+}
+
+
 
